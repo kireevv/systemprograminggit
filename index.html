@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Навчальна веб-сторінка про систему контролю версій Git: основні поняття, можливості, базові команди, сертифікат та джерела." />
+  <title>Git — Система контролю версій</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== STICKY NAV ===== -->
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-icon">G</div>
+      GitGuide
+    </div>
+    <a href="#vcs">Про VCS</a>
+    <a href="#features">Переваги</a>
+    <a href="#commands">Команди</a>
+    <a href="#certificate">Сертифікат</a>
+    <a href="#sources">Джерела</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header>
+    <div class="hero-badge">📘 Навчальний матеріал</div>
+    <h1>Знайомство з <span>Git</span></h1>
+    <p class="subtitle">Розподілена система контролю версій, яку використовують мільйони розробників по всьому світу</p>
+    <div class="hero-nav">
+      <a href="#vcs">📚 Теорія</a>
+      <a href="#features">⚡ Переваги</a>
+      <a href="#commands">💻 Команди</a>
+      <a href="#certificate">🏆 Сертифікат</a>
+      <a href="#sources">🔗 Джерела</a>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- 1. VCS та Git -->
+    <section id="vcs">
+      <div class="section-header">
+        <span class="section-label">Розділ 01</span>
+        <h2>Системи контролю версій та Git</h2>
+        <p>Основна теорія, яка допоможе зрозуміти, навіщо взагалі потрібен Git і як він працює</p>
+      </div>
+      <div class="info-grid">
+
+        <div class="card">
+          <span class="card-icon">📁</span>
+          <h3>Що таке СКВ?</h3>
+          <p>Система контролю версій (VCS — Version Control System) — це програмний інструмент, що відстежує та керує
+            змінами у файлах з часом. Вона дозволяє повернутися до будь-якої попередньої версії, порівнювати зміни та
+            відновлювати файли після помилок.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">🌐</span>
+          <h3>Типи СКВ</h3>
+          <p><strong>Локальні</strong> — зберігають версії лише на комп'ютері (RCS).<br>
+            <strong>Централізовані</strong> — один центральний сервер (SVN, CVS).<br>
+            <strong>Розподілені</strong> — кожен клієнт має повну копію репозиторію (Git, Mercurial).
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">🔶</span>
+          <h3>Що таке Git?</h3>
+          <p>Git — безкоштовна розподілена СКВ із відкритим кодом, створена Лінусом Торвальдсом у <strong>2005
+              році</strong> для розробки ядра Linux. Сьогодні це найпопулярніша у світі система контролю версій.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">⚙️</span>
+          <h3>Як працює Git?</h3>
+          <p>Git зберігає дані як <strong>знімки (snapshots)</strong> файлової системи, а не різниці між версіями. Кожен
+            commit — це знімок усіх файлів у певний момент. Це забезпечує надзвичайно швидку роботу.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">🔀</span>
+          <h3>Гілки та злиття</h3>
+          <p>Головна сила Git — <strong>гілки (branches)</strong>. Вони дозволяють розробляти нові функції ізольовано,
+            не впливаючи на основний код. Злиття (merge) та перебазування (rebase) — ключові операції командної роботи.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">☁️</span>
+          <h3>Хостинг та Git</h3>
+          <p>Популярні платформи для роботи з Git-репозиторіями: <strong>GitHub</strong>, <strong>GitLab</strong>,
+            <strong>Bitbucket</strong>. Вони додають веб-інтерфейс, pull requests, code review та інші інструменти для
+            командної розробки.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Переваги -->
+    <section id="features">
+      <div class="section-header">
+        <span class="section-label">Розділ 02</span>
+        <h2>Можливості та переваги Git</h2>
+        <p>Чому саме Git став стандартом індустрії для мільйонів розробників і компаній</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-item">
+          <div class="feature-num">1</div>
+          <div>
+            <h4>Розподілена архітектура</h4>
+            <p>Кожен розробник має повну копію репозиторію. Робота можлива без інтернету, а ризик втрати даних
+              мінімальний.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">2</div>
+          <div>
+            <h4>Швидкість і продуктивність</h4>
+            <p>Більшість операцій виконуються локально, без мережевих запитів — Git надзвичайно швидкий.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">3</div>
+          <div>
+            <h4>Ефективне гілкування</h4>
+            <p>Створення гілок займає мілісекунди. Це заохочує ізольовану розробку нових функцій і безпечне
+              експериментування.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">4</div>
+          <div>
+            <h4>Цілісність даних</h4>
+            <p>Кожен об'єкт має SHA-1 хеш. Неможливо змінити дані непоміченим — Git гарантує цілісність усієї історії.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">5</div>
+          <div>
+            <h4>Відкритий вихідний код</h4>
+            <p>Git повністю безкоштовний і відкритий. Величезна спільнота, розширена документація та підтримка на всіх
+              платформах.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">6</div>
+          <div>
+            <h4>Гнучкі робочі процеси</h4>
+            <p>Git підтримує різні workflow: Git Flow, GitHub Flow, Trunk-Based Development — вибирайте під свій проєкт.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">7</div>
+          <div>
+            <h4>Повна історія змін</h4>
+            <p>Зберігається повна хронологія всіх змін з автором, датою та коментарем. Легко знайти, коли і ким введено
+              помилку.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">8</div>
+          <div>
+            <h4>Командна співпраця</h4>
+            <p>Pull requests та code review дозволяють командам ефективно рецензувати код перед об'єднанням у основну
+              гілку.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Команди -->
+    <section id="commands">
+      <div class="section-header">
+        <span class="section-label">Розділ 03</span>
+        <h2>10 базових команд Git</h2>
+        <p>Найважливіші команди, які потрібно знати кожному розробнику для початку роботи з Git</p>
+      </div>
+      <div class="commands-list">
+
+        <!-- 1 git init -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">1</div>
+            <h3>git init — ініціалізація репозиторію</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git init</span>
+              <span class="comment"># Ініціалізує новий Git-репозиторій у поточній директорії</span>
+              <span class="comment"># Створює приховану папку .git з усіма службовими файлами</span>
+
+              <span class="prompt">$</span> <span class="cmd">git init</span> <span class="arg">my-project</span>
+              <span class="comment"># Створює нову папку my-project та ініціалізує в ній репозиторій</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Перша команда при старті нового проєкту. <strong>git init</strong> створює порожній Git-репозиторій або
+            reinitializes existing one. Після виконання в поточній директорії з'явиться прихована папка
+            <code>.git</code>.
+          </div>
+        </div>
+
+        <!-- 2 git clone -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">2</div>
+            <h3>git clone — клонування репозиторію</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git clone</span> <span
+                class="arg">https://github.com/user/repo.git</span>
+              <span class="comment"># Клонує репозиторій у нову папку з назвою repo</span>
+
+              <span class="prompt">$</span> <span class="cmd">git clone</span> <span
+                class="arg">https://github.com/user/repo.git</span> <span class="arg">my-folder</span>
+              <span class="comment"># Клонує в папку з вказаною назвою</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Копіює існуючий репозиторій разом з усією <strong>повною історією змін</strong>. Автоматично налаштовує
+            remote «origin» на вихідний URL.
+          </div>
+        </div>
+
+        <!-- 3 git status -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">3</div>
+            <h3>git status — стан робочої директорії</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git status</span>
+              <span class="comment"># Показує поточний стан: змінені, нові та staged файли</span>
+
+              <span class="prompt">$</span> <span class="cmd">git status</span> <span class="flag">-s</span>
+              <span class="comment"># Короткий формат виводу (M = modified, A = added, ? = untracked)</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Найбільш часто використовувана команда. Показує: <strong>на якій гілці ви знаходитесь</strong>, які файли
+            змінені, які готові до commit (staged), а які ще не відстежуються.
+          </div>
+        </div>
+
+        <!-- 4 git add -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">4</div>
+            <h3>git add — додавання змін до staging</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git add</span> <span
+                class="arg">index.html</span>
+              <span class="comment"># Додає конкретний файл до staging area</span>
+
+              <span class="prompt">$</span> <span class="cmd">git add</span> <span class="flag">.</span>
+              <span class="comment"># Додає всі змінені файли в поточній директорії</span>
+
+              <span class="prompt">$</span> <span class="cmd">git add</span> <span class="flag">-p</span>
+              <span class="comment"># Інтерактивний режим — вибір конкретних частин файлу</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Переміщає зміни до <strong>staging area (індексу)</strong> — проміжної зони перед commit. Дозволяє точно
+            контролювати, які зміни потраплять у наступний commit.
+          </div>
+        </div>
+
+        <!-- 5 git commit -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">5</div>
+            <h3>git commit — збереження змін</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git commit</span> <span
+                class="flag">-m</span> <span class="arg">"feat: add navigation menu"</span>
+              <span class="comment"># Зберігає staged зміни з повідомленням</span>
+
+              <span class="prompt">$</span> <span class="cmd">git commit</span> <span class="flag">--amend</span>
+              <span class="comment"># Виправляє останній commit (повідомлення або зміст)</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Записує знімок staged змін у локальний репозиторій. Кожен commit — це <strong>точка відновлення</strong>.
+            Пишіть зрозумілі повідомлення в стилі Conventional Commits.
+          </div>
+        </div>
+
+        <!-- 6 git branch -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">6</div>
+            <h3>git branch — управління гілками</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git branch</span>
+              <span class="comment"># Показує список локальних гілок (* = поточна)</span>
+
+              <span class="prompt">$</span> <span class="cmd">git branch</span> <span class="arg">feature/login</span>
+              <span class="comment"># Створює нову гілку feature/login</span>
+
+              <span class="prompt">$</span> <span class="cmd">git branch</span> <span class="flag">-d</span> <span
+                class="arg">feature/login</span>
+              <span class="comment"># Видаляє гілку після злиття</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Гілки в Git — <strong>надлегкі покажчики</strong> на конкретні commits. Вони дозволяють ізолювати розробку
+            нових функцій від стабільного коду в main.
+          </div>
+        </div>
+
+        <!-- 7 git checkout / switch -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">7</div>
+            <h3>git switch — перемикання між гілками</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git switch</span> <span
+                class="arg">main</span>
+              <span class="comment"># Перемикається на гілку main</span>
+
+              <span class="prompt">$</span> <span class="cmd">git switch</span> <span class="flag">-c</span> <span
+                class="arg">feature/new-page</span>
+              <span class="comment"># Створює нову гілку і одразу перемикається на неї</span>
+
+              <span class="prompt">$</span> <span class="cmd">git checkout</span> <span class="arg">main</span>
+              <span class="comment"># Застаріла, але ще активно вживана альтернатива</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            <strong>git switch</strong> — сучасна команда (Git 2.23+) для перемикання між гілками. Замінює частину
+            функцій git checkout, роблячи призначення команд більш явним.
+          </div>
+        </div>
+
+        <!-- 8 git merge -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">8</div>
+            <h3>git merge — злиття гілок</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git switch</span> <span
+                class="arg">main</span>
+              <span class="comment"># Спочатку перейдіть на цільову гілку</span>
+
+              <span class="prompt">$</span> <span class="cmd">git merge</span> <span class="arg">feature/login</span>
+              <span class="comment"># Зливає гілку feature/login у поточну (main)</span>
+
+              <span class="prompt">$</span> <span class="cmd">git merge</span> <span class="flag">--no-ff</span> <span
+                class="arg">feature/login</span>
+              <span class="comment"># Злиття зі створенням merge commit (зберігає історію гілки)</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Об'єднує зміни з іншої гілки в поточну. При <strong>конфліктах злиття</strong> Git позначає проблемні місця
+            — розробник вирішує їх вручну, потім робить commit.
+          </div>
+        </div>
+
+        <!-- 9 git pull / push -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">9</div>
+            <h3>git pull / git push — синхронізація з remote</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git pull</span> <span
+                class="arg">origin main</span>
+              <span class="comment"># Отримує та зливає зміни з remote репозиторію</span>
+
+              <span class="prompt">$</span> <span class="cmd">git push</span> <span class="arg">origin main</span>
+              <span class="comment"># Відправляє локальні commits на remote сервер</span>
+
+              <span class="prompt">$</span> <span class="cmd">git push</span> <span class="flag">-u</span> <span
+                class="arg">origin feature/login</span>
+              <span class="comment"># Відправляє нову гілку та встановлює upstream tracking</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            <strong>git pull</strong> = git fetch + git merge. Завантажує зміни з remote та об'єднує з локальними.
+            <strong>git push</strong> — навпаки, відправляє ваші локальні commits на сервер.
+          </div>
+        </div>
+
+        <!-- 10 git log -->
+        <div class="command-card">
+          <div class="command-header">
+            <div class="cmd-num">10</div>
+            <h3>git log — перегляд історії</h3>
+          </div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+              <span
+                style="color:#8b949e;font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">bash</span>
+            </div>
+            <div class="code-term"><span class="prompt">$</span> <span class="cmd">git log</span>
+              <span class="comment"># Повна історія commits (з хешами, авторами, датами)</span>
+
+              <span class="prompt">$</span> <span class="cmd">git log</span> <span class="flag">--oneline --graph
+                --all</span>
+              <span class="comment"># Компактна графічна візуалізація всіх гілок</span>
+
+              <span class="prompt">$</span> <span class="cmd">git log</span> <span class="flag">--author=</span><span
+                class="arg">"Ivan"</span> <span class="flag">--since=</span><span class="arg">"2025-01-01"</span>
+              <span class="comment"># Фільтр за автором та датою</span>
+            </div>
+          </div>
+          <div class="command-desc">
+            Відображає <strong>хронологію commits</strong> у репозиторії. Флаг <code>--oneline --graph</code> перетворює
+            лог на наочне дерево гілок — незамінний інструмент для розуміння структури проєкту.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Сертифікат -->
+    <section id="certificate">
+      <div class="section-header">
+        <span class="section-label">Розділ 04</span>
+        <h2>Сертифікат курсу</h2>
+        <p>Підтвердження успішного проходження курсу «Git Version Control Mastery»</p>
+      </div>
+      <div class="certificate-wrapper">
+        <div class="certificate-frame">
+          <img src="certificate.jpg" alt="Сертифікат курсу Git Version Control Mastery" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Джерела -->
+    <section id="sources">
+      <div class="section-header">
+        <span class="section-label">Розділ 05</span>
+        <h2>Джерела інформації</h2>
+        <p>Корисні ресурси для поглибленого вивчення Git та систем контролю версій</p>
+      </div>
+      <div class="sources-grid">
+
+        <a href="https://git-scm.com/doc" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">📖</div>
+          <div>
+            <h4>Офіційна документація Git</h4>
+            <p>Повна документація Git: довідник команд, книга Pro Git, відеоуроки від творців</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://git-scm.com/book/uk/v2" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">📗</div>
+          <div>
+            <h4>Pro Git (українською)</h4>
+            <p>Безкоштовна книга «Pro Git» від Scott Chacon, перекладена українською мовою</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://learngitbranching.js.org/?locale=uk" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">🎮</div>
+          <div>
+            <h4>Learn Git Branching</h4>
+            <p>Інтерактивний тренажер для вивчення гілок, злиття та перебазування Git в ігровій формі</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://docs.github.com/uk" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">🐙</div>
+          <div>
+            <h4>Документація GitHub</h4>
+            <p>Офіційна документація GitHub — від старту до CI/CD, GitHub Actions та API</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">🌀</div>
+          <div>
+            <h4>Atlassian Git Tutorials</h4>
+            <p>Детальні туторіали від Atlassian: команди, workflow, гілкування, rebase та merge</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank" rel="noopener"
+          class="source-card">
+          <div class="source-icon">📄</div>
+          <div>
+            <h4>GitHub Git Cheat Sheet</h4>
+            <p>Офіційна шпаргалка GitHub з найважливішими командами Git — зручно роздрукувати</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://www.youtube.com/@Fireship" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">▶️</div>
+          <div>
+            <h4>Fireship — YouTube</h4>
+            <p>Відеоканал з короткими та ємними поясненнями Git та сучасних технологій розробки</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+        <a href="https://ohmygit.org/" target="_blank" rel="noopener" class="source-card">
+          <div class="source-icon">🃏</div>
+          <div>
+            <h4>Oh My Git!</h4>
+            <p>Безкоштовна гра для вивчення Git — виконуйте завдання, взаємодіючи з реальним репозиторієм</p>
+          </div>
+          <span class="source-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">⬡ GitGuide</div>
+    <p>Навчальний матеріал з теми «Системи контролю версій та Git»</p>
+    <div class="footer-ai-badge">
+      🤖 Розроблено за допомогою штучного інтелекту (Google Gemini)
+    </div>
+  </footer>
+
+</body>
+
+</html>
